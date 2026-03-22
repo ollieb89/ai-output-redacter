@@ -156,18 +156,20 @@ MIT — see [LICENSE](LICENSE)
 
 
 ---
+
 ## Part of the AI DevOps Actions suite
 
-This action is one of seven tools that form the **[AI DevOps Actions](https://github.com/ollieb89/ai-devops-actions)** suite — end-to-end CI/CD for AI systems, from pull request to output safety.
+This action is one of eight tools that form the **[AI DevOps Actions](https://github.com/ollieb89/ai-devops-actions)** suite — end-to-end CI/CD for AI systems.
 
 | Action | Purpose |
 |--------|---------|
 | [ai-pr-guardian](https://github.com/ollieb89/ai-pr-guardian) | Gate low-quality and AI-generated PRs |
-| [llm-cost-tracker](https://github.com/ollieb89/llm-cost-tracker) | Track AI API costs in CI, alert on overruns |
-| [mcp-server-tester](https://github.com/ollieb89/mcp-server-tester) | Validate MCP servers: health, compliance, discovery |
-| [actions-lockfile-generator](https://github.com/ollieb89/actions-lockfile-generator) | Pin Actions to SHA, prevent supply chain attacks |
-| [agent-skill-validator](https://github.com/ollieb89/agent-skill-validator) | Lint and validate agent skill repos |
-| [ai-workflow-evals](https://github.com/ollieb89/ai-workflow-evals) | Run eval suites — catch AI behavioral regressions |
+| [pr-context-enricher](https://github.com/ollieb89/pr-context-enricher) | Rich context summaries for AI code reviewers |
 | [ai-output-redacter](https://github.com/ollieb89/ai-output-redacter) | Scan and redact secrets/PII in AI-generated outputs |
+| [actions-lockfile-generator](https://github.com/ollieb89/actions-lockfile-generator) | Pin Actions to SHA, prevent supply chain attacks |
+| [ai-workflow-evals](https://github.com/ollieb89/ai-workflow-evals) | Run eval suites — catch AI behavioral regressions |
+| [mcp-server-tester](https://github.com/ollieb89/mcp-server-tester) | Validate MCP servers: health, compliance, discovery |
+| [agent-skill-validator](https://github.com/ollieb89/agent-skill-validator) | Lint and validate agent skill repos |
+| [llm-cost-tracker](https://github.com/ollieb89/llm-cost-tracker) | Track AI API costs in CI, alert on overruns |
 
 → [View the full suite](https://github.com/ollieb89/ai-devops-actions)
