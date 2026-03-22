@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: actions/setup-node@1a4442cacd436585916779262731d1f68b4d3696 # v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+
+  self-scan:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: actions/setup-node@1a4442cacd436585916779262731d1f68b4d3696 # v4
+        with:
+          node-version: '20'
+      - run: npm ci && npm run build
+      - name: Self-scan (report mode)
+        uses: ./
+        with:
+          scan-paths: 'src/'
+          mode: 'report'
+          fail-on: 'none'

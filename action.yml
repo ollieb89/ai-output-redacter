@@ -1,0 +1,47 @@
+name: 'ai-output-redacter'
+description: 'Stop AI leaks before they leave CI. Scan and redact sensitive content in AI-generated outputs.'
+author: 'ollieb89'
+
+branding:
+  icon: 'shield'
+  color: 'red'
+
+inputs:
+  scan-paths:
+    description: 'Comma-separated list of files or directories to scan'
+    required: false
+    default: '.'
+  config-path:
+    description: 'Path to .ai-output-redacter.yml config file'
+    required: false
+    default: '.ai-output-redacter.yml'
+  mode:
+    description: 'report | redact | enforce'
+    required: false
+    default: 'report'
+  fail-on:
+    description: 'any | high | none (used in enforce mode)'
+    required: false
+    default: 'any'
+  scan-stdin:
+    description: 'Also scan stdin for sensitive content'
+    required: false
+    default: 'false'
+  ignore-paths:
+    description: 'Comma-separated paths to skip during scan'
+    required: false
+    default: ''
+
+outputs:
+  violations-found:
+    description: 'true if any violations were detected'
+  violation-count:
+    description: 'Total number of violations found'
+  rules-triggered:
+    description: 'Comma-separated list of rule names that triggered'
+  report-path:
+    description: 'Path to JSON report artifact'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
