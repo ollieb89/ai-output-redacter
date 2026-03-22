@@ -1,0 +1,43 @@
+{
+  "name": "ai-output-redacter",
+  "version": "1.0.0",
+  "description": "Stop AI leaks before they leave CI. Scan and redact sensitive content in AI-generated outputs.",
+  "main": "dist/index.js",
+  "bin": {
+    "ai-output-redacter": "./dist/bin/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": ["security", "secrets-detection", "pii", "redaction", "github-actions", "ai-safety", "data-protection", "ci-cd", "compliance", "developer-tools"],
+  "author": "ollieb89",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.17.10",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.2"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": ["**/tests/**/*.test.ts"],
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/index.ts",
+      "!src/bin/cli.ts"
+    ],
+    "coverageThreshold": {
+      "global": { "lines": 75 }
+    }
+  }
+}
